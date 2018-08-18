@@ -120,9 +120,19 @@
                 </div>
 
                 <div class="example">
-                    <small>Contoh: Aku di Bandara Soekarno Hatta beli kopi Starbucks sebesar Rp.50.0000 pada tanggal 17
-                        Agustus 2018 10:23:12 karena haus.
-                    </small>
+                    <div class="small">Contoh:
+                        <ul>
+                            <li>
+                                Aku di Bandara Soekarno Hatta mengeluarkan uang dari dompet untuk membeli kopi Starbucks sebesar Rp.50.000 pada tanggal 17
+                                Agustus 2018 10:23:12 karena haus.
+                            </li>
+
+                            <li>
+                                Aku di kantor mendapatkan uang dari Sehati ke dompet sebesar Rp.4.000.000 pada tanggal 25 April 2018 karena gajian.
+                            </li>
+                        </ul>
+
+                    </div>
                 </div>
 
                 <div class="action">
