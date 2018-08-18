@@ -9,37 +9,10 @@
 namespace App\Libraries\LanguageProcess;
 
 
+use App\Model\Verb;
+
 class ObtainLocation extends AbstractObtainer implements Obtainer
 {
-
-
-//    public function extract()
-//    {
-//        $splits = explode(' ', $this->string);
-//
-//        $expectedWords = [];
-//        if (in_array($this->startKey(), $splits)) {
-//            $indexKey = null;
-//
-//            foreach ($splits as $i => $item) {
-//                if ($item == $this->startKey()) {
-//
-//                    $indexKey = $i;
-//                }
-//            }
-//
-//            for ($i = $indexKey + 1; $i < count($splits); $i++) {
-//
-//                if (in_array($splits[$i], $this->stopKey()))
-//                    break;
-//
-//                $expectedWords[] = $splits[$i];
-//            }
-//        }
-//
-//        return implode(' ', $expectedWords);
-//    }
-
     public function startKey(): array
     {
         return ['di'];
@@ -47,7 +20,10 @@ class ObtainLocation extends AbstractObtainer implements Obtainer
 
     public function stopKey(): array
     {
+        $verbs = Verb::pluck('name')->toArray();
 
-        return ['mengeluarkan','mendapatkan'];
+        $stopKeys = ['mengeluarkan','mendapatkan'];
+
+        return array_merge($verbs, $stopKeys);
     }
 }
