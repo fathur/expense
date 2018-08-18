@@ -142,6 +142,21 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <ol class="list-unstyled">
+            @foreach($stories as $story)
+                <li>
+                    <div class="alert alert-primary" role="alert">
+                    Aku di {{$story->location}} mengeluarkan uang untuk {{$story->activity->name}} {{$story->object}} sebesar {{$story->money}} pada tanggal {{$story->datetime}}
+                    karena {{$story->cause}}.
+                    </div>
+                </li>
+            @endforeach
+            </ol>
+        </div>
+    </div>
 @endsection
 
 @push('scripts')
