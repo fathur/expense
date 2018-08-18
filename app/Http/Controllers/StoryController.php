@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class StoryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('story.index');
@@ -17,8 +22,6 @@ class StoryController extends Controller
     public function store(Request $request)
     {
         $user = \Auth::user();
-
-//        dd($user);
 
         $predicate = $request->get('what-activity');
         $activity = Activity::nameLike($request->get('what-activity'))->first();
