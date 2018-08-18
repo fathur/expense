@@ -42,5 +42,7 @@ class StoryController extends Controller
             'datetime' => $request->get('when'),
             'cause' => $request->get('why')
         ]);
+
+        return redirect()->to('/story');
     }
 }
