@@ -16,7 +16,9 @@ class StoryController extends Controller
 
     public function index()
     {
-        $stories = Story::all();
+        $stories = Story::with(['activity'])
+            ->orderBy('created_at', 'desc')
+            ->take(100)->get();
 
         return view('story.index', compact('stories'));
     }
